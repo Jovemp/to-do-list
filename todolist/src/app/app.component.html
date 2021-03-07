@@ -1,0 +1,43 @@
+<div class="container" role="main">
+  <div class="header">
+    <button mat-raised-button color="primary" class="botao" (click)="onClickNovo()">
+      <div>
+        <mat-spinner [diameter]="30" class="mat-progress-spinner" *ngIf="loading"></mat-spinner>
+        <span>Estou sem tarefas</span>
+      </div>
+    </button>
+  </div>
+  <div class="container mx-auto p-2">
+    <div class="listas">
+      <div cdkDropList #minha="cdkDropList" [cdkDropListConnectedTo]="[confirmados]" [cdkDropListData]="pendentes"
+        class="col-lg-6" (cdkDropListDropped)="dropPendente($event)">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-danger titulo">
+            <h2>Pendentes</h2>
+          </li>
+          <li class="list-group-item" *ngFor="let p of pendentes " cdkDrag>
+            <div class="card" rel="noopener">
+              <span>{{p.descricao}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div cdkDropList #confirmados="cdkDropList" [cdkDropListData]="concluidos" [cdkDropListConnectedTo]="[minha]"
+        (cdkDropListDropped)="dropConcluido($event)" class="col-lg-6">
+        <ul class="list-group">
+          <li class="list-group-item active titulo">
+            <h2>Concluidos</h2>
+          </li>
+          <li class="list-group-item" *ngFor="let p of concluidos" cdkDrag>
+            <div class="card" rel="noopener">
+              <span>{{p.descricao}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

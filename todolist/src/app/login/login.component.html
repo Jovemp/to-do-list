@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <p>Digite a senha do supervisor.</p>
+  <mat-form-field>
+    <mat-label>Senha</mat-label>
+    <input matInput [(ngModel)]="data.senha" type="password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
