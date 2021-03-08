@@ -9,7 +9,7 @@
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-instalar">Instalar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#instalar">Instalar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 <br>
@@ -27,9 +27,11 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologia e/ou plataform
 
 ## 💻 Projeto
 
-Este projeto foi desenvolvido como processo seletivo da Saipos.
-É uma lista de tarefa, que pode ser adicionado novas tarefas apertando em "Estou sem tarefas"
-Podendo mover as tarefas de pendente para concluídos livremente, mais de concluídos para pendentes deve inserir uma senha "TrabalheNaSaipos", podendo realizar este movimento apenas duas vezes.
+Esta aplicação foi criada para gerenciar uma lista de tarefas.
+Para criar uma nova tarefa, deverá clicar em "Estou sem tarefas".
+cada tarefa poderá ter seu status alteração de pendente para concluídos, porém
+para voltar o status de concluidos para pendente, deverá ser inserida uma senha
+de permissão "TrabalheNaSaipos", e essa alteração poderá ser feita somente uma vez.
 
 
 ## Instalar
