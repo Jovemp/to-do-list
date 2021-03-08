@@ -29,9 +29,8 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologia e/ou plataform
 
 Este projeto foi desenvolvido como processo seletivo da Saipos.
 É uma lista de tarefa, que pode ser adicionado novas tarefas apertando em "Estou sem tarefas"
-podendo mover as tarefas de pendente para concluidos livremente 
-mais de concluidos para pendentes deve inserir uma senha "TrabalheNaSaipos", podendo
-realizar este movimento apenas uma vez
+Podendo mover as tarefas de pendente para concluídos livremente, mais de concluídos para pendentes deve inserir uma senha "TrabalheNaSaipos", podendo realizar este movimento apenas duas vezes.
+
 
 ## Instalar
 
