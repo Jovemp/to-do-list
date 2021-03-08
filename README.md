@@ -31,7 +31,7 @@ Esta aplicação foi criada para gerenciar uma lista de tarefas.
 Para criar uma nova tarefa, deverá clicar em "Estou sem tarefas".
 cada tarefa poderá ter seu status alteração de pendente para concluídos, porém
 para voltar o status de concluidos para pendente, deverá ser inserida uma senha
-de permissão "TrabalheNaSaipos", e essa alteração poderá ser feita somente uma vez.
+de permissão "TrabalheNaSaipos", e essa alteração poderá ser feita somente duas vez.
 
 
 ## Instalar
