@@ -4,17 +4,6 @@
 <h2 align="center">
   Processo seletivo da Saipos
 </h2>
-
-<p align="center">
- <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=f9a826&labelColor=1C1C1C" alt="PRs welcome!" />
-
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=f9a826&labelColor=1C1C1C">
-</p>
-<p align="center">
- <img src="https://img.shields.io/static/v1?label=RHUA1&message=Projeto%20Semestral&color=f9a826&labelColor=1C1C1C" alt="PRs welcome!" />
-
-  <img alt="License" src="https://img.shields.io/static/v1?label=Processo%20seletivo&message=Conduent&color=f9a826&labelColor=1C1C1C">
-</p>
 </p>
 
 <p align="center">
