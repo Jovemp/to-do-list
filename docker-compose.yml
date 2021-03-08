@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.4.9
+    environment:
+      - POSTGRES_DB=saipos
+      - POSTGRES_USER=saipos
+      - POSTGRES_PASSWORD=TrabalheNaSaipos
+      - TZ=GMT
+    ports:
+      - "5432:5432"
+
+  webservice:
+    build:
+      context: ./backend/
+    environment:
+      - DIALECT_DB=postgres
+      - HOST_DB=db
+      - USERNAME_DB=saipos
+      - PASSWORD_DB=TrabalheNaSaipos
+      - DATABASE_DB=saipos
+      - PORT_DB=5432
+      - KEY_MAIL=2e65804d3d10013e03115ba51edc979c
+      - PORT=3333
+    depends_on:
+      - "db"       
+    command: ["./wait-for-it.sh", "yarn start"]
+    ports:
+      - "3333:3333"
+    links:
+      - db:db
+
+  web:
+    build:
+      context: ./todolist/
+    environment:
+      URL: webservice
+      PORT: 3333
+    ports:
+      - "80:80"
+    external_links:
+      - webservice
+    links:
+      - webservice

@@ -1,29 +1,24 @@
+FROM node:12.7-alpine as build
+WORKDIR /app
+RUN apk add zip
+COPY ./package.json ./.sequelizerc ./yarn.* ./
+RUN yarn
+COPY . .
+RUN yarn build
+RUN zip -r dist.zip ./dist
 #Imagem a ser Utilizada
-FROM node:12-alpine
-
-ENV DB_DIALECT=sqlite
-
-RUN apk add g++ make python
-
-#Criando a pasta aonde vai ficar api e dando permicao 
-RUN mkdir -p /home/node/api/node_modules && mkdir -p /home/node/api/src && mkdir -p /home/node/api/__tests__ && chown -R node:node /home/node/api 
-
-#Setando a pasta como local padrao
-WORKDIR /home/node/api
-
-#Copiando do projeto para o docker os arquivos pachage.json e os com nome yarn para diretorio padrao
-COPY package.json .sequelizerc yarn.* ./
-
-#Setando usuario
-USER node
-
-#Rodando yarn na pasta para copiar dependencias
-RUN yarn --production 
-
-#copiando a pasta inteira
-COPY --chown=node:node ./dist/ ./src/
-
-#Expondo a portas para acesso
+FROM node:lts-alpine
+WORKDIR /app
+RUN apk add unzip
+RUN apk --update add postgresql-client
+RUN apk add bind-tools 
+RUN apk add zip
+COPY --from=build /app/package.json ./
+COPY --from=build /app/.sequelizerc ./
+COPY --from=build /app/dist.zip ./
+COPY --from=build /app/wait-for-it.sh ./wait-for-it.sh 
+RUN chmod +x wait-for-it.sh
+RUN unzip dist.zip
+RUN yarn
 EXPOSE 3333
-
-CMD yarn sequelize db:migrate && node ./src/server.js
+CMD "yarn" "start"
